@@ -26,9 +26,7 @@ CREATE TABLE `classify` (
   `idmanga` int(11) NOT NULL,
   `idgenre` int(11) NOT NULL,
   PRIMARY KEY (`idmanga`,`idgenre`),
-  KEY `fk_genre_idx` (`idgenre`) -- ,
-  -- CONSTRAINT `fk_classify_genre` FOREIGN KEY (`idgenre`) REFERENCES `genre` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  -- CONSTRAINT `fk_classify_manga` FOREIGN KEY (`idmanga`) REFERENCES `manga` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_genre_idx` (`idgenre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -77,9 +75,7 @@ CREATE TABLE `publish` (
   `idmanga` int(11) NOT NULL,
   `idmagazine` int(11) NOT NULL,
   PRIMARY KEY (`idmanga`,`idmagazine`),
-  KEY `fk_magazine_idx` (`idmagazine`) -- ,
-  -- CONSTRAINT `fk_publish_magazine` FOREIGN KEY (`idmagazine`) REFERENCES `magazine` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  -- CONSTRAINT `fk_publish_manga` FOREIGN KEY (`idmanga`) REFERENCES `manga` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_magazine_idx` (`idmagazine`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -91,7 +87,5 @@ CREATE TABLE `write` (
   `idauthor` int(11) NOT NULL,
   `role` varchar(45) NOT NULL,
   PRIMARY KEY (`idmanga`,`idauthor`),
-  KEY `fk_author_idx` (`idauthor`) -- ,
-  -- CONSTRAINT `fk_write_author` FOREIGN KEY (`idauthor`) REFERENCES `author` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  -- CONSTRAINT `fk_write_manga` FOREIGN KEY (`idmanga`) REFERENCES `manga` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_author_idx` (`idauthor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
