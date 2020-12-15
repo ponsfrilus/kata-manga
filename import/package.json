@@ -1,0 +1,14 @@
+{
+  "name": "import",
+  "version": "1.0.0",
+  "description": "Generate a DB schema for the top 100 mangas in MyAnimeList",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
