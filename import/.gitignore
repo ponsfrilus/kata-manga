@@ -1,3 +1,5 @@
 node_modules
 mal_token.json
 data/tmp/*
+mysql
+docker-compose.yml

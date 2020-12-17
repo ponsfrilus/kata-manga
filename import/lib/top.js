@@ -38,7 +38,7 @@ async function topX(limit = 100) {
 
 async function getDetails(id) {
   return await fetch(
-    `https://api.myanimelist.net/v2/manga/${id}?nsfw=true&fields=id,title,main_picture,alternative_titles,start_date,end_date,status,synopsis,nsfw,genres,authors{id,first_name,last_name},serialization{id,name,link}`,
+    `https://api.myanimelist.net/v2/manga/${id}?nsfw=true&fields=id,title,main_picture,alternative_titles,start_date,end_date,status,synopsis,nsfw,genres,authors{id,first_name,last_name},serialization{id,name,link},num_volumes,num_chapters`,
     {
       method: 'get',
       headers: {
@@ -62,6 +62,7 @@ const getTopMangas = async (limit = 100) => {
   topdetails = []
   for (const entry of top) {
     detail = await getDetails(entry.node.id)
+    detail.rank = entry.ranking.rank
     topdetails.push(detail)
   }
   storeJSONData(topdetails, `./data/tmp/top${limit}details.json`)

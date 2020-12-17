@@ -58,8 +58,10 @@ const genSQL = (limit = 100) => {
     manga.start_date = zeroDate(manga.start_date)
     manga.end_date = zeroDate(manga.end_date)
     let manga_sql =
-      'REPLACE INTO `manga` (`id`, `title`, `status`, `start_date`, `end_date`, `synopsis`) VALUES (' +
+      'REPLACE INTO `manga` (`id`, `rank`, `title`, `status`, `start_date`, `end_date`, `synopsis`, `image_url`, `num_volumes`, `num_chapters`) VALUES (' +
       manga.id +
+      ', ' +
+      manga.rank +
       ', "' +
       manga.title +
       '", "' +
@@ -70,7 +72,13 @@ const genSQL = (limit = 100) => {
       end_date +
       ', "' +
       addSlashes(manga.synopsis) +
-      '");'
+      '", "' +
+      manga.main_picture.large +
+      '", ' +
+      manga.num_volumes +
+      ', ' +
+      manga.num_chapters +
+      ');'
     sql['manga'].push(manga_sql)
 
     for (let genre of manga.genres) {

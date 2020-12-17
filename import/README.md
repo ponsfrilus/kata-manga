@@ -1,11 +1,12 @@
 # Import
 
-
 ## TL;DR
 
 Use [MyAnimeList (MAL)](https://myanimelist.net) API to generate a
 `KataManga_structure_and_data.sql` SQL script to populate the DB.
 
+![Berserk — Credit: Dark Horse Comics](./data/chapter_169.webp)
+<small>Berserk — Credit: Dark Horse Comics</small>
 
 ## Usage
 

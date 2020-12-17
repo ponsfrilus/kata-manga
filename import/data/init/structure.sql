@@ -58,11 +58,15 @@ CREATE TABLE `magazine` (
 DROP TABLE IF EXISTS `manga`;
 CREATE TABLE `manga` (
   `id` int(11) NOT NULL,
+  `rank` int(3) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `status` varchar(20) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
   `synopsis` mediumtext DEFAULT NULL,
+  `image_url` varchar(255) DEFAULT NULL,
+  `num_chapters` int(2) DEFAULT NULL,
+  `num_volumes` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `manga_id_IDX` (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
