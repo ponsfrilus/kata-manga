@@ -46,24 +46,24 @@ commentaires bienvenues via <https://github.com/ponsfrilus/kata-manga/issues>.
 Le but de ce travail est de fournir une application Web et une [API] présentant
 les 100 [mangas] les plus populaires.
 
-Les données sont fournies sous forme de fichier SQL
-([KataManga_structure_and_data.sql]), que l'apprenti devra exploiter. Ces
-données peuvent être regénérées à partir des scripts présents dans le dossier
-[import](https://github.com/ponsfrilus/kata-manga/tree/master/import) de ce
-répertoire et extraient les informations des 100 mangas les plus populaires du
-site [My Anime List](https://myanimelist.net/topmanga.php).
+Les données sont fournies sous forme de fichier SQL 
+([KataManga_structure_and_data.sql]), que l'apprenti devra exploiter. En cas de 
+nécessité, ces données peuvent être regénérées à partir des scripts présents 
+dans le dossier [import](https://github.com/ponsfrilus/kata-manga/tree/master/import) 
+de ce répertoire et extraient les informations des 100 mangas les plus 
+populaires du site [My Anime List](https://myanimelist.net/topmanga.php).
 
 
 ## Informations générales
 
-Le Kata Manga est prévu pour être réalisé en ****80 heures**.
+Le Kata Manga est prévu pour être réalisé en **80 heures**.
 
 La répartition du temps suggérée est la suivante :
 
-  - Analyse : 10%
-  - Implémentation : 50%
-  - Tests : 10%
-  - Documentations : 30%
+  - Analyse : **10%**
+  - Implémentation : **50%**
+  - Tests : **10%**
+  - Documentations : **30%**
 
 
 ## Matériel et logiciel à disposition
@@ -82,7 +82,7 @@ obligatoires, les élements suivants :
 
 ## Prérequis
 
-Pour mener à bien ce travail, l'apprenti doit 
+Pour mener à bien ce travail, l'apprenti doit :
 
   - connaître les bases de l’administration système ([shell], [ssh], [CLI]), 
   - être à l'aise avec au moins un langage de programmation permettant de
@@ -158,7 +158,7 @@ Le candidat atteindra, de préférence dans l'ordre, les étapes suivantes :
     par Swagger). Le cahier de tests est mis à jour.
 
   - Peaufinage : les autres exigences techniques mentionnées dans ce cahier des
-   charges sont atteintes. Le cahier de tests est mis à jour.
+    charges sont atteintes. Le cahier de tests est mis à jour.
 
 **Le rapport, le journal de travail et le dépôt Git doivent être mis à jour en
 continu** pour rendre compte des accomplissements à chaque étape ci-dessus.
@@ -168,9 +168,9 @@ ne seront tolérées.
 
 ### API
 
-La partie API fournit, sous forme d'API REST, les accesseurs
-nécessaires pour créer, lire, mettre à jour et supprimer ([CRUD]) les entités
-présentes dans chaque table de la base de données.
+La partie API fournit, sous forme d'API REST, les accesseurs nécessaires pour
+créer, lire, mettre à jour et supprimer ([CRUD]) les entités présentes dans
+chaque table de la base de données.
 
 La sécurité des données de l'API (vis-à-vis des lectures et écritures non
 autorisées, ou bien des attaques XSRF) est en-dehors du périmètre du kata.
@@ -178,9 +178,9 @@ autorisées, ou bien des attaques XSRF) est en-dehors du périmètre du kata.
 
 ### Front-end
 
-Le site Web présente quatre pages aux utilisateurs. L'en-tête fournit
-un menu de navigation vers ces dernières. Le pied de page mentionne le numéro de
-version de l'application ainsi qu'un lien vers ses sources.
+Le site Web présente quatre pages aux utilisateurs. L'en-tête fournit un menu de
+navigation vers ces dernières. Le pied de page mentionne le numéro de version de
+l'application ainsi qu'un lien vers ses sources.
 
 
 #### Home
