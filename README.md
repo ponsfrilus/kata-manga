@@ -60,53 +60,47 @@ Le Kata Manga est prévu pour être réalisé en **80 heures**.
 
 La répartition du temps suggérée est la suivante :
 
-  - Analyse : **10%**
+  - Analyse : **15%**
   - Implémentation : **50%**
-  - Tests : **10%**
-  - Documentations : **30%**
+  - Tests : **20%**
+  - Documentations : **15%**
 
 
 ## Matériel et logiciel à disposition
 
 La réalisation de ce travail nécessite uniquement un laptop et un accès à
-Internet. L'utilisation de logiciels libres est fortement recommandée.
-
-Sont nommément décrits dans le présent cahier des charges, et sont donc réputés
-obligatoires, les élements suivants :
+Internet. L'utilisation des logiciels ci-dessous est obligatoire.
 
   - [docker] et [docker-compose]
   - [Swagger]
-  - [MySQL]
+  - [MySQL/MARIADB]
   - [Git]
 
+En cas d'utilisation d'autre logiciels, il est préférable d'utiliser des logiciels open-source.
 
 ## Prérequis
 
 Pour mener à bien ce travail, l'apprenti doit :
 
-  - connaître les bases de l’administration système ([shell], [ssh], [CLI]), 
-  - être à l'aise avec au moins un langage de programmation permettant de
-    réaliser un site Web, 
-  - savoir manipuler des conteneurs [Docker] et les orchestrer avec 
-    [docker-compose], 
-  - maîtriser un [système de gestion de base de données (SGBD)] basé sur [SQL],
-  - connaître les bases du langage de balisage [MarkDown] pour réaliser les
-    documentations presecrites, 
-  - être confortable avec l'utilisation de [Git].
-
+  - Connaître les bases de l’administration système ([shell], [ssh], [CLI]). 
+  - Etre à l'aise avec au moins un langage de programmation permettant de
+    réaliser un site Web. 
+  - Utiliser et créer des conteneurs [Docker] et les orchestrer avec 
+    [docker-compose]. 
+  - Maîtriser un [système de gestion de base de données (SGBD)] basé sur [SQL].
+  - Connaître les bases du langage de balisage [MarkDown] pour réaliser les
+    documentations presecrites.
+  - Faire du versionning avec [Git].
+  - Connaissance sur l'utilisation de registry comme Harbor ou Docker Hub. (non obligatoire pour la création et l'herbergement d'image)
 
 ## Descriptif du projet
 
 Le but de ce projet est de développer, dans des conteneurs Docker,
-l'application Kata Manga. Elle se compose de trois briques fonctionnelles :
+l'application Kata Manga. Elle se compose de trois briques (ou container différent!? L'information doit être précise) fonctionnelles :
 
   - l'API (aka back-end) ;
   - le site Web (aka front-end) ;
   - la base de données.
-
-_Note que dans certains cas, il se peut que l'API et le front-end se trouvent 
-dans le même conteneur._
-
 
 ### Conseils sur le déroulé
 
@@ -132,7 +126,7 @@ Le candidat atteindra, de préférence dans l'ordre, les étapes suivantes :
     exclues) ont été identifiées, et chacune d'elles est visible sous la forme
     d'un modèle sur la page Swagger.
 
-  - Testabilité API : le candidat a établi une stratégie pour tester l'API, et
+  - Fonctionnement de l'API : le candidat a établi une stratégie pour tester l'API, et
     en a rendu compte dans les différentes documentations à produire pour au
     moins un verbe HTTP sur au moins une des entités.
 
@@ -148,7 +142,7 @@ Le candidat atteindra, de préférence dans l'ordre, les étapes suivantes :
     matière de pages visibles par l'utilisateur du front-end, sont satisfaites
     avec des données «bidon» (qui ne sont pas consultées en base)
 
-  - Testabilité front-end : un cahier de tests est commencé pour valider le
+  - Fonctionnement du front-end : un cahier de tests est commencé pour valider le
     bon fonctionnement du front-end. Il décrit les actions entreprises par le
     candidat pour effectuer les tests lui-même.
 
@@ -159,12 +153,6 @@ Le candidat atteindra, de préférence dans l'ordre, les étapes suivantes :
 
   - Peaufinage : les autres exigences techniques mentionnées dans ce cahier des
     charges sont atteintes. Le cahier de tests est mis à jour.
-
-**Le rapport, le journal de travail et le dépôt Git doivent être mis à jour en
-continu** pour rendre compte des accomplissements à chaque étape ci-dessus.
-Aucune «hypothèque» de temps de travail péjorant la documentation ni le code,
-ne seront tolérées.
-
 
 ### API
 
@@ -258,7 +246,7 @@ En fin de première journée de travail, le candidat envoie (au format [PDF]) au
 intéressés une planification initiale détaillant les tâches à accomplir durant
 le projet. Le niveau de granularité du découpage doit être de 2 à 4 heures.
 
-Tout au long du projet, le candidat mettra à jour la planification rééle.
+Tout au long du projet, le candidat mettra à jour le document de la réalisation (comparaison possible entre l'execution et la planification).
 
 En fin de projet, le candidat veillera a ajouter les planifications initiale et
 rééle dans son rapport, et prendra le soin de commenter les différences.
