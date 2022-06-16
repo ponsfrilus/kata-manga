@@ -28,8 +28,8 @@
 
 ## À propos
 
-Le Kata Manga est un exercice de programmation destiné aux apprentis
-[informaticiens CFC en voie développement d'applications]. Il est fait
+Le Kata Manga est un exercice de programmation destiné aux apprenti·e·s
+[informaticien·ne·s CFC en voie développement d'applications]. Il est fait
 pour se dérouler sous forme de [Travail pratique individuel (TPI)],
 dont le cadre est fixé par l'aricle 20 de l'[Ordonnance du SEFRI sur
 la formation professionnelle initiale] et l'évaluation faite selon les
@@ -47,10 +47,10 @@ Le but de ce travail est de fournir une application Web et une [API] présentant
 les 100 [mangas] les plus populaires.
 
 Les données sont fournies sous forme de fichier SQL 
-([KataManga_structure_and_data.sql]), que l'apprenti devra exploiter. En cas de 
-nécessité, ces données peuvent être regénérées à partir des scripts présents 
+([KataManga_structure_and_data.sql]), que l'apprenti·e devra exploiter. En cas
+de nécessité, ces données peuvent être regénérées à partir des scripts présents 
 dans le dossier [import](https://github.com/ponsfrilus/kata-manga/tree/master/import) 
-de ce répertoire et extraient les informations des 100 mangas les plus 
+de ce répertoire, ils extraient les informations des 100 mangas les plus 
 populaires du site [My Anime List](https://myanimelist.net/topmanga.php).
 
 
@@ -63,7 +63,7 @@ La répartition du temps suggérée est la suivante :
   - Analyse : **10%**
   - Implémentation : **50%**
   - Tests : **10%**
-  - Documentations : **30%**
+  - Documentation : **30%**
 
 
 ## Matériel et logiciel à disposition
@@ -74,7 +74,7 @@ Internet. L'utilisation de logiciels libres est fortement recommandée.
 Sont nommément décrits dans le présent cahier des charges, et sont donc réputés
 obligatoires, les élements suivants :
 
-  - [docker] et [docker-compose]
+  - [Docker] et [docker-compose]
   - [Swagger]
   - [MySQL]
   - [Git]
@@ -82,9 +82,9 @@ obligatoires, les élements suivants :
 
 ## Prérequis
 
-Pour mener à bien ce travail, l'apprenti doit :
+Pour mener à bien ce travail, l'apprenti·e doit :
 
-  - connaître les bases de l’administration système ([shell], [ssh], [CLI]), 
+  - connaître les bases de l’administration système ([shell], [SSH], [CLI]), 
   - être à l'aise avec au moins un langage de programmation permettant de
     réaliser un site Web, 
   - savoir manipuler des conteneurs [Docker] et les orchestrer avec 
@@ -104,15 +104,15 @@ l'application Kata Manga. Elle se compose de trois briques fonctionnelles :
   - le site Web (aka front-end) ;
   - la base de données.
 
-_Note que dans certains cas, il se peut que l'API et le front-end se trouvent 
+_Note : dans certains cas, il se peut que l'API et le front-end se trouvent 
 dans le même conteneur._
 
 
 ### Conseils sur le déroulé
 
-Le candidat atteindra, de préférence dans l'ordre, les étapes suivantes :
+Le·la candidat·e atteindra, de préférence dans l'ordre, les étapes suivantes :
 
-  - Fondation «ops» : le docker-compose est rédigé; il lance automatiquement la
+  - Fondation «ops» : le docker-compose est rédigé ; il lance automatiquement la
     base de données et un serveur applicatif pour le langage de programmation
     choisi.
 
@@ -132,8 +132,8 @@ Le candidat atteindra, de préférence dans l'ordre, les étapes suivantes :
     exclues) ont été identifiées, et chacune d'elles est visible sous la forme
     d'un modèle sur la page Swagger.
 
-  - Testabilité API : le candidat a établi une stratégie pour tester l'API, et
-    en a rendu compte dans les différentes documentations à produire pour au
+  - Testabilité API : le·la candidat·e a établi une stratégie pour tester l'API,
+    et en a rendu compte dans les différentes documentations à produire pour au
     moins un verbe HTTP sur au moins une des entités.
 
   - Lecture complète Swagger : il est possible d'énumérer toutes les entités et
@@ -149,8 +149,8 @@ Le candidat atteindra, de préférence dans l'ordre, les étapes suivantes :
     avec des données «bidon» (qui ne sont pas consultées en base)
 
   - Testabilité front-end : un cahier de tests est commencé pour valider le
-    bon fonctionnement du front-end. Il décrit les actions entreprises par le
-    candidat pour effectuer les tests lui-même.
+    bon fonctionnement du front-end. Il décrit les actions entreprises par le·la
+    candidat·e pour effectuer les tests lui·elle-même.
 
   - Front-end fonctionnel (en lecture seule) : on peut rechercher et consulter,
     comme documenté dans le présent document, toutes les entités et toutes les
@@ -173,7 +173,7 @@ créer, lire, mettre à jour et supprimer ([CRUD]) les entités présentes dans
 chaque table de la base de données.
 
 La sécurité des données de l'API (vis-à-vis des lectures et écritures non
-autorisées, ou bien des attaques XSRF) est en-dehors du périmètre du kata.
+autorisées, ou bien des attaques XSRF) est en-dehors du périmètre de ce travail.
 
 
 ### Front-end
@@ -194,7 +194,7 @@ Cette page doit accueillir les visiteurs et présenter le projet.
 
 Page principale du site présentant une liste des mangas.
 
-  - Une table les présentent avec leurs `rank`, `title`, `author`, `genre`, 
+  - Une table les présente avec leurs `rank`, `title`, `author`, `genre`, 
     `magazine`, `release date`, `status` ;
   - La ligne contient un lien vers 
     [https://myanimelist.net/manga/{id}](https://myanimelist.net/manga/2) ;
@@ -227,7 +227,7 @@ Mangas avec le filtre de recherche pré-rempli.
 Cette page consiste en la mini-application de découverte de l'API fournie par
 Swagger.
 
-Le candidat veille à ce que
+Le·la candidat·e veille à ce que
 
   - cette page soit active aussi vite que possible dans le déroulé du projet
   - tous les modèles de la base de données sous-jacente (mangas, genres,
@@ -240,10 +240,10 @@ Le candidat veille à ce que
 
 ### Tests
 
-Les scénarios de tests mis en place par le candidat doivent être communiqués
-aux intéressés et documentés dans le rapport. Concernant l'API, ces
-derniers doivent pouvoir être (re)joués facilement, selon la méthode
-et les explications fournies par l'apprenti. Une façon d'automatiser
+Les scénarios de tests mis en place par le·la candidat·e doivent être
+communiqués aux intéressé·e·s et documentés dans le rapport. Concernant l'API,
+ces derniers doivent pouvoir être (re)joués facilement, selon la méthode
+et les explications fournies par l'apprenti·e. Une façon d'automatiser
 ces tests (ex : scripts en shell appelant `curl`, ou bien l'outil
 [postman](https://www.postman.com/use-cases/api-testing-automation/)) est
 vivement recommandée.
@@ -254,32 +254,38 @@ vivement recommandée.
 
 ### Planification
 
-En fin de première journée de travail, le candidat envoie (au format [PDF]) aux
-intéressés une planification initiale détaillant les tâches à accomplir durant
-le projet. Le niveau de granularité du découpage doit être de 2 à 4 heures.
+En fin de première journée de travail, le·la candidat·e envoie (au format [PDF])
+aux intéressés une planification initiale détaillant les tâches à accomplir
+durant le projet. Le niveau de granularité du découpage doit être de 2 à 4
+heures.
 
-Tout au long du projet, le candidat mettra à jour la planification rééle.
+Tout au long du projet, le·la candidat·e mettra à jour la planification rééle.
 
-En fin de projet, le candidat veillera a ajouter les planifications initiale et
-rééle dans son rapport, et prendra le soin de commenter les différences.
+En fin de projet, le·la candidat·e veillera a ajouter les planifications
+initiale et rééle dans son rapport, et prendra le soin d'en commenter les
+différences.
 
 
 ### Rapport
 
 Un [canevas de dossier de
 projet](http://www.tpivd.ch/files/cfc-ordo2k14/Annexe%203%20Canevas%20Dossier%20de%20projet.docx)
-est à disposition du candidat.
+est à disposition du·de la candidat·e.
 
 Le rapport prête une attention particulière à
 détailler les [points techniques évalués spécifiques au
 projet](#points-techniques-évalués-spécifiques-au-projet), prouvant que
-l'élément a été traité de manière professionnelle par le candidat.
+l'élément a été traité de manière professionnelle par le·la candidat·e.
 
 Les termes techniques et les acronymes utilisés dans le rapport sont référencés
 dans un glossaire figurant dans le rapport.
 
 Les choix technologiques sont justifiés dans le rapport. Les outils et les
-technologies utilisées sont l'objet de descriptions explicatives dans le rapport.
+technologies utilisées sont l'objet de descriptions explicatives dans le 
+rapport.
+
+Le candidat démontre sa compréhension du système en fournissant un schéma
+d'architecture dont la description detail l'intéraction entre les systèmes.
 
 Le document doit évoluer chaque jour. Il sera envoyé dans l'état aux intéressés
 deux fois par semaine, au format [PDF].
@@ -287,14 +293,15 @@ deux fois par semaine, au format [PDF].
 
 ### Journal de travail
 
-Le journal de travail doit permettre de retracer les activités du candidat
-tout au long du déroulement du projet. Durée des tâches, PV des discussions,
-problèmes rencontrés, choix, solutions, liens vers la documentation, les
-références, sources d'informations, aide extérieur, heures supplémentaires, etc.
-doivent être consignés dans ce document (c.f. [critères d'évaluation] **B2**).
+Le journal de travail doit permettre de retracer les activités du·de la
+candidat·e tout au long du déroulement du projet. Durée des tâches, PV
+des discussions, problèmes rencontrés, choix, solutions, liens vers la
+documentation, les références, sources d'informations, aide extérieure, heures
+supplémentaires, etc. doivent être consignés dans ce document (c.f. [critères
+d'évaluation] **B2**).
 
-Le document doit évoluer chaque jour. Il sera envoyé dans l'état aux intéressés
-deux fois par semaine, au format [PDF].
+Le document doit évoluer chaque jour. Il sera envoyé dans l'état aux
+intéressé·e·s deux fois par semaine, au format [PDF].
 
 
 #### Annexes
@@ -306,18 +313,18 @@ de travail, résumé du rapport TPI, etc. doivent être annexés au document.
 
 ### Application et code
 
-Le candidat communique l'adresse de son dépôt Git aux intéressés et le maintient
-à jour quotidiennement (plusieurs *commits* par jour). Le dépôt est agrémenté
-d'un fichier `README.md` au format [MarkDown], qui explique l'utilisation du
-projet et sa mise en œuvre. (Voir aussi l'objectif «simplicité des instructions
-de mise en œuvre», ci-dessous).
+Le·la candidat·e communique l'adresse de son dépôt Git aux intéressés et le
+maintient à jour quotidiennement (plusieurs *commits* par jour). Le dépôt est
+agrémenté d'un fichier `README.md` au format [MarkDown], qui explique
+l'utilisation du projet et sa mise en œuvre. (Voir aussi l'objectif «simplicité
+des instructions de mise en œuvre», ci-dessous).
 
 
 ## Points techniques évalués spécifiques au projet
 
 La grille d'évaluation définit les critères généraux selon lesquels le travail
-du candidat sera évalué (documentation, journal de travail, respect des normes,
-qualité, …).
+du candidat·e sera évalué (documentation, journal de travail, respect des 
+normes, qualité, …).
 
 En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
 (correspondant aux [critères d'évaluation] **A14** à **A20**) :
@@ -344,11 +351,11 @@ En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
   1. Le front-end est soigné, la liste des mangas paginée, triable et la
      possibilité de faire une recherche dans la table est présente.
 
-  1. Le rapport démontre que le candidat a étudié le modèle des données : un
-     diagramme entité-association ([ERD]) est présent dans le rapport. Le 
-     candidat décrit et critique le diagramme et les différentes tables.
+  1. Le rapport démontre que le·la candidat·e a étudié le modèle des données : 
+     un diagramme entité-association ([ERD]) est présent dans le rapport. Le·la
+     candidat·e décrit et critique le diagramme et les différentes tables.
 
-  1. L'utilisateur a accès à une page de documentation de l'API,
+  1. L'utilisateur·trice a accès à une page de documentation de l'API,
      qui explique les types de données, les valeurs de retour, les
      différentes possibilités d'interactions avec l'API. Le respect de
      [OAS](http://spec.openapis.org/oas/v3.0.3) et l'utilisation des fonctions 
@@ -368,7 +375,7 @@ En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
 [DRY : Don’t Repeat Yourself]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [ERD]: https://fr.wikipedia.org/wiki/Mod%C3%A8le_entit%C3%A9-association
 [Git]: https://git-scm.com/
-[informaticiens CFC en voie développement d'applications]: https://www.ict-berufsbildung.ch/fr/formation-professionnelle/informaticien-ne-cfc-developpement-dapplications/
+[informaticien·ne·s CFC en voie développement d'applications]: https://www.ict-berufsbildung.ch/fr/formation-professionnelle/informaticien-ne-cfc-developpement-dapplications/
 [KataManga_structure_and_data.sql]: https://github.com/ponsfrilus/kata-manga/tree/master/import/data/KataManga_structure_and_data.sql
 [mangas]: https://fr.wikipedia.org/wiki/Manga
 [MarkDown]: https://daringfireball.net/projects/markdown/
