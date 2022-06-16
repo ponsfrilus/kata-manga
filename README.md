@@ -23,6 +23,7 @@
     - [Annexes](#annexes)
   - [Application et code](#application-et-code)
 - [Points techniques évalués spécifiques au projet](#points-techniques-évalués-spécifiques-au-projet)
+- [Acceptation du cahier des charges](#acceptation-du-cahier-des-charges)
 <!-- /TOC -->
 
 
@@ -363,6 +364,23 @@ En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
      [OAS](http://spec.openapis.org/oas/v3.0.3) et l'utilisation des fonctions 
      de documentation de [Swagger] sont nécessaires pour obtenir le score 
      maximal sur ce point.
+
+
+## Acceptation du cahier des charges
+
+<!-- way too much effort to get a spacing in pandoc https://tex.stackexchange.com/a/4523/92317 -->
+|     |                   | Lu et approuvé le | Signature         |     |
+| --- | ----------------: | ----------------- | ----------------- | --- |
+|     | \vphantom         |                   |                   |     |
+|     | Candidat·e        | _________________ | _________________ |     |
+|     | \vphantom         |                   |                   |     |
+|     | Expert·e n°1      | _________________ | _________________ |     |
+|     | \vphantom         |                   |                   |     |
+|     | Expert·e n°2      | _________________ | _________________ |     |
+|     | \vphantom         |                   |                   |     |
+|     | Chef·fe de projet | _________________ | _________________ |     |
+|     | \vphantom         |                   |                   |     |
+
 
 
 [REFERENCES]: ------------------------------------------------------------------
