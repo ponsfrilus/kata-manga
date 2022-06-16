@@ -412,7 +412,7 @@ En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
 [système de gestion de base de données (SGBD)]: https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es
 [Travail pratique individuel (TPI)]: https://www.iffp.swiss/tpi-travail-pratique-individuel
 
-[#]: pandoc README.md \
+[use me to generate the PDF]: # (pandoc README.md \
     --pdf-engine=xelatex \
     -V mainfont="DejaVu Sans" \
     -V urlcolor=cyan \
@@ -422,4 +422,4 @@ En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
     -V geometry:hmargin=3cm \
     -V block-headings \
     -o README.pdf; \
-  xdg-open README.pdf
+  xdg-open README.pdf)
