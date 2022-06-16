@@ -56,7 +56,9 @@ populaires du site [My Anime List](https://myanimelist.net/topmanga.php).
 
 ## Informations générales
 
-Le Kata Manga est prévu pour être réalisé en **80 heures**.
+Le Kata Manga est prévu pour être réalisé en **80 heures**. Néamoins, si la 
+personne le réalisant est à l'aise avec Docker, les API et le développement 
+font-end, il est possible de réduire la durée pour réaliser un "mini TPI".
 
 La répartition du temps suggérée est la suivante :
 
