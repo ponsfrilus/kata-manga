@@ -274,8 +274,12 @@ Le·la candidat·e atteindra, de préférence dans l’ordre, les étapes suivan
 
 **Le rapport, le journal de travail et le dépôt Git doivent être mis à jour en
 continu** pour rendre compte des accomplissements à chaque étape ci-dessus.
+
 Aucune «hypothèque» de temps de travail péjorant la documentation ni le code,
 ne seront tolérées.
+
+| ⚠️ Il est impératif de souligner l'importance de la documentation dans cet exercice, c'est principalament sur cette dernière que les candidat·e·s sont évalués ⚠️ |
+| :---: |
 
 
 ## Livrables
