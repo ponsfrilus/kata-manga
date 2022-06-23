@@ -8,14 +8,17 @@
 - [Matériel et logiciel à disposition](#matériel-et-logiciel-à-disposition)
 - [Prérequis](#prérequis)
 - [Descriptif du projet](#descriptif-du-projet)
-  - [Conseils sur le déroulé](#conseils-sur-le-déroulé)
   - [API](#api)
   - [Front-end](#front-end)
     - [Home](#home)
     - [Mangas](#mangas)
     - [Manga details](#manga-details)
     - [API](#api)
+  - [Base de données](#base-de-données)
   - [Tests](#tests)
+- [Conseils](#conseils)
+  - [Conseils sur le déroulé du développement](#conseils-sur-le-déroulé-du-développement)
+  - [Conseils sur le déroulé de la documentation](#conseils-sur-le-déroulé-de-la-documentation)
 - [Livrables](#livrables)
   - [Planification](#planification)
   - [Rapport](#rapport)
@@ -38,8 +41,10 @@ la formation professionnelle initiale] et l’évaluation faite selon les
 iCQ-VD](http://www.tpivd.ch/files/cfc-ordo2k14/2.%20Criteres%20d%20evaluation%20TPI.PDF).
 
 Les sources de ce document se trouvent sur
-<https://github.com/ponsfrilus/kata-manga>. Contributions, remarques et
-commentaires bienvenues via <https://github.com/ponsfrilus/kata-manga/issues>.
+<https://github.com/ponsfrilus/kata-manga>.
+
+Contributions, remarques et commentaires bienvenues via
+<https://github.com/ponsfrilus/kata-manga/issues>.
 
 
 ### Vue d’ensemble
@@ -79,7 +84,7 @@ obligatoires, les élements suivants :
 
   - [Docker] et [docker-compose]
   - [Swagger]
-  - [MySQL]
+  - [RDBMS] tel que [MySQL] ou [MariaDB]
   - [Git]
 
 
@@ -107,11 +112,112 @@ l’application Kata Manga. Elle se compose de trois briques fonctionnelles :
   - le site Web (aka front-end) ;
   - la base de données.
 
-_Note : dans certains cas, il se peut que l’API et le front-end se trouvent 
-dans le même conteneur._
+_Note : en fonction des choix technologiques qui sont effectués, il peut être 
+envisageable que l’API et le front-end se trouvent dans le même conteneur._
 
 
-### Conseils sur le déroulé
+### API
+
+La partie API fournit, sous forme d’API REST, les accesseurs nécessaires pour
+créer, lire, mettre à jour et supprimer ([CRUD]) les entités présentes dans
+chaque table de la base de données.
+
+La sécurité des données de l’API (vis-à-vis des lectures et écritures non
+autorisées, ou bien des attaques XSRF) est en-dehors du périmètre de ce travail.
+
+
+### Front-end
+
+Le site Web présente quatre pages aux utilisateurs. L’en-tête fournit un menu de
+navigation vers ces dernières. Le pied de page mentionne le numéro de version de
+l’application ainsi qu’un lien vers ses sources.
+
+
+#### Home
+
+Cette page doit accueillir les visiteurs et présenter le projet, décrite dans la Figure 1.
+
+!["Maquette de page d’accueil"](./doc/pencil/home.png)
+
+
+#### Mangas
+
+Page principale du site présentant une liste des mangas, décrite dans la Figure
+2.
+
+  - Une table les présente avec leurs `rank`, `title`, `author`, `genre`, 
+    `magazine`, `release date`, `status` ;
+  - La ligne contient un lien vers 
+    [https://myanimelist.net/manga/{id}](https://myanimelist.net/manga/2) ;
+  - Chaque colonne est triable ;
+  - Une recherche est possible soit simultanément sur tous les champs de la 
+    table, soit séparément sur les champs `title`, `author`, `genre` 
+    ou `magazine` ;
+  - Le nombre de résultats présentés dans la table peut être modifié (`10`,
+    `15`, `20` ou `25`) ;
+  - Une pagination est présente, permettant aux visiteurs d’afficher les 
+    résultats suivant ou précédant ceux actuellement affichés.
+
+!["Maquette de page mangas"](./doc/pencil/mangas.png)
+
+
+#### Manga details
+
+Page de détails d’un manga, décrite dans la Figure 3.
+
+Cette page présente toutes les informations disponibles en base pour un manga.
+
+L’information des `author`, `genre` ou `magazine` présente un lien vers la page
+Mangas avec le filtre de recherche pré-rempli.
+
+!["Maquette de page de détails manga"](./doc/pencil/manga_details.png)
+
+
+#### API
+
+Cette page consiste en la mini-application de découverte de l’API fournie par
+Swagger, décrite dans la Figure 4.
+
+Le·la candidat·e veille à ce que
+
+  - cette page soit active aussi vite que possible dans le déroulé du projet
+  - tous les modèles de la base de données sous-jacente (mangas, genres,
+    magazines et auteurs) soient visibles aussi vite que possible dans le
+    déroulé du projet (même si initialement toutes les informations ne sont pas
+    fournies, ou bien ne sont pas modifiables via l’API)
+
+!["Maquette de page API"](./doc/pencil/api.png)
+
+
+### Base de données
+
+Les données pour débuter l'application Kata-Manga sont disponibles dans le
+répertoire [import](./import) de ce dépôt : le dossier data contient un dumb SQL
+([KataManga_structure_and_data.sql]) à exploiter.
+
+Il est attendu de la part du·de la candidat·e d'utiliser ce fichier afin de
+l'importer automatiquement dans son [système de gestion de base de données
+(SGBD)].
+
+Le fichier [import/README.md](./import/README.md) explique de quelle manière les
+données ont été récupérée et permet de regénérer les données en cas de besoin
+(opération qui ne devrait pas être nécessaire lors de la réalisation).
+
+
+### Tests
+
+Les scénarios de tests mis en place par le·la candidat·e doivent être
+communiqués aux intéressé·e·s et documentés dans le rapport. Concernant l’API,
+ces derniers doivent pouvoir être (re)joués facilement, selon la méthode
+et les explications fournies par l’apprenti·e. Une façon d’automatiser
+ces tests (ex : scripts en shell appelant `curl`, ou bien l’outil
+[postman](https://www.postman.com/use-cases/api-testing-automation/)) est
+vivement recommandée.
+
+
+## Conseils
+
+### Conseils sur le déroulé du développement
 
 Le·la candidat·e atteindra, de préférence dans l’ordre, les étapes suivantes :
 
@@ -163,104 +269,23 @@ Le·la candidat·e atteindra, de préférence dans l’ordre, les étapes suivan
   - Peaufinage : les autres exigences techniques mentionnées dans ce cahier des
     charges sont atteintes. Le cahier de tests est mis à jour.
 
+
+### Conseils sur le déroulé de la documentation
+
 **Le rapport, le journal de travail et le dépôt Git doivent être mis à jour en
 continu** pour rendre compte des accomplissements à chaque étape ci-dessus.
 Aucune «hypothèque» de temps de travail péjorant la documentation ni le code,
 ne seront tolérées.
 
 
-### API
-
-La partie API fournit, sous forme d’API REST, les accesseurs nécessaires pour
-créer, lire, mettre à jour et supprimer ([CRUD]) les entités présentes dans
-chaque table de la base de données.
-
-La sécurité des données de l’API (vis-à-vis des lectures et écritures non
-autorisées, ou bien des attaques XSRF) est en-dehors du périmètre de ce travail.
-
-
-### Front-end
-
-Le site Web présente quatre pages aux utilisateurs. L’en-tête fournit un menu de
-navigation vers ces dernières. Le pied de page mentionne le numéro de version de
-l’application ainsi qu’un lien vers ses sources.
-
-
-#### Home
-
-Cette page doit accueillir les visiteurs et présenter le projet.
-
-!["Maquette de page d’accueil"](./doc/pencil/home.png)
-
-
-#### Mangas
-
-Page principale du site présentant une liste des mangas.
-
-  - Une table les présente avec leurs `rank`, `title`, `author`, `genre`, 
-    `magazine`, `release date`, `status` ;
-  - La ligne contient un lien vers 
-    [https://myanimelist.net/manga/{id}](https://myanimelist.net/manga/2) ;
-  - Chaque colonne est triable ;
-  - Une recherche est possible soit simultanément sur tous les champs de la 
-    table, soit séparément sur les champs `title`, `author`, `genre` 
-    ou `magazine` ;
-  - Le nombre de résultats présentés dans la table peut être modifié (`10`,
-    `15`, `20` ou `25`) ;
-  - Une pagination est présente, permettant aux visiteurs d’afficher les 
-    résultats suivant ou précédant ceux actuellement affichés.
-
-!["Maquette de page mangas"](./doc/pencil/mangas.png)
-
-
-#### Manga details
-
-Page de détails d’un manga.
-
-Cette page présente toutes les informations disponibles en base pour un manga.
-
-L’information des `author`, `genre` ou `magazine` présente un lien vers la page
-Mangas avec le filtre de recherche pré-rempli.
-
-!["Maquette de page de détails manga"](./doc/pencil/manga_details.png)
-
-
-#### API
-
-Cette page consiste en la mini-application de découverte de l’API fournie par
-Swagger.
-
-Le·la candidat·e veille à ce que
-
-  - cette page soit active aussi vite que possible dans le déroulé du projet
-  - tous les modèles de la base de données sous-jacente (mangas, genres,
-    magazines et auteurs) soient visibles aussi vite que possible dans le
-    déroulé du projet (même si initialement toutes les informations ne sont pas
-    fournies, ou bien ne sont pas modifiables via l’API)
-
-!["Maquette de page API"](./doc/pencil/api.png)
-
-
-### Tests
-
-Les scénarios de tests mis en place par le·la candidat·e doivent être
-communiqués aux intéressé·e·s et documentés dans le rapport. Concernant l’API,
-ces derniers doivent pouvoir être (re)joués facilement, selon la méthode
-et les explications fournies par l’apprenti·e. Une façon d’automatiser
-ces tests (ex : scripts en shell appelant `curl`, ou bien l’outil
-[postman](https://www.postman.com/use-cases/api-testing-automation/)) est
-vivement recommandée.
-
-
 ## Livrables
-
 
 ### Planification
 
 En fin de première journée de travail, le·la candidat·e envoie (au format [PDF])
-aux intéressés une planification initiale détaillant les tâches à accomplir
-durant le projet. Le niveau de granularité du découpage doit être de 2 à 4
-heures.
+aux intéressé·e·s une planification initiale détaillant les tâches à accomplir
+durant le projet. Le niveau de granularité du découpage devrait être de 2 à 4
+heures, mais peut descendre plus bas si la durée du TPI est écourtée.
 
 Tout au long du projet, le·la candidat·e mettra à jour la planification rééle.
 
@@ -290,8 +315,8 @@ rapport.
 Le candidat démontre sa compréhension du système en fournissant un schéma
 d’architecture dont la description detail l’intéraction entre les systèmes.
 
-Le document doit évoluer chaque jour. Il sera envoyé dans l’état aux intéressés
-deux fois par semaine, au format [PDF].
+Le document doit évoluer chaque jour. Il sera envoyé dans l’état aux
+intéressé·e·s deux fois par semaine, au format [PDF].
 
 
 ### Journal de travail
@@ -316,7 +341,7 @@ de travail, résumé du rapport TPI, etc. doivent être annexés au document.
 
 ### Application et code
 
-Le·la candidat·e communique l’adresse de son dépôt Git aux intéressés et le
+Le·la candidat·e communique l’adresse de son dépôt Git aux intéressé·e·s et le
 maintient à jour quotidiennement (plusieurs *commits* par jour). Le dépôt est
 agrémenté d’un fichier `README.md` au format [MarkDown], qui explique
 l’utilisation du projet et sa mise en œuvre. (Voir aussi l’objectif «simplicité
@@ -341,7 +366,7 @@ En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
      Yourself]) et respectant le [style de programmation] des langages utilisés.
 
   1. La simplicité des instructions de mise en œuvre, qui permettent aux
-     intéressés d’essayer le projet sur leur propre équipement au fur et à 
+     intéressé·e·s d’essayer le projet sur leur propre équipement au fur et à 
      mesure de sa progression.  
      Idéalement, les instructions se limitent à deux étapes 
      (`git clone` et `docker-compose up`).
@@ -401,6 +426,8 @@ En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
 [MarkDown]: https://daringfireball.net/projects/markdown/
 [méthodes HTTP]: https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode
 [MySQL]: https://www.mysql.com/
+[RDBMS]: https://en.wikipedia.org/wiki/RDBMS
+[MariaDB]: https://mariadb.org/
 [Open Web Application Security Project® (OWASP)]: https://owasp.org/
 [Ordonnance du SEFRI sur la formation professionnelle initiale]: https://www.ict-berufsbildung.ch/fileadmin/user_upload/02_Francais/01_formation_initiale/PDF/Bildungsverordnung_Informatiker_in_EFZ-100f-20131017TRR.pdf
 [PDF]: https://en.wikipedia.org/wiki/PDF
