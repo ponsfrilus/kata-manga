@@ -21,9 +21,10 @@
   - [Conseils sur le déroulé de la documentation](#conseils-sur-le-déroulé-de-la-documentation)
 - [Livrables](#livrables)
   - [Planification](#planification)
-  - [Rapport](#rapport)
-  - [Journal de travail](#journal-de-travail)
+  - [Dossier de projet](#dossier-de-projet)
+    - [Rapport](#rapport)
     - [Annexes](#annexes)
+  - [Journal de travail](#journal-de-travail)
   - [Application et code](#application-et-code)
 - [Points techniques évalués spécifiques au projet](#points-techniques-évalués-spécifiques-au-projet)
 - [Acceptation du cahier des charges](#acceptation-du-cahier-des-charges)
@@ -298,7 +299,9 @@ initiale et rééle dans son rapport, et prendra le soin d’en commenter les
 différences.
 
 
-### Rapport
+### Dossier de projet
+
+#### Rapport
 
 Un [canevas de dossier de
 projet](http://www.tpivd.ch/files/cfc-ordo2k14/Annexe%203%20Canevas%20Dossier%20de%20projet.docx)
@@ -320,7 +323,15 @@ Le candidat démontre sa compréhension du système en fournissant un schéma
 d’architecture dont la description detail l’intéraction entre les systèmes.
 
 Le document doit évoluer chaque jour. Il sera envoyé dans l’état aux
-intéressé·e·s deux fois par semaine, au format [PDF].
+intéressé·e·s deux fois par semaine, au format [PDF]. Dans le cas d'un mini-TPI,
+le rapport est envoyé chaque jour.
+
+
+#### Annexes
+
+Le rapport contient tous les documents nécessaires à la compréhension du
+déroulement du projet en annexes. Cahier des charges, planifications, journal
+de travail, résumé du rapport TPI, etc. doivent être annexés au document.
 
 
 ### Journal de travail
@@ -332,15 +343,12 @@ documentation, les références, sources d’informations, aide extérieure, heu
 supplémentaires, etc. doivent être consignés dans ce document (c.f. [critères
 d’évaluation] **B2**).
 
+Le journal de travail est présent dans le dossier de projet, en annexe au
+rapport.
+
 Le document doit évoluer chaque jour. Il sera envoyé dans l’état aux
-intéressé·e·s deux fois par semaine, au format [PDF].
-
-
-#### Annexes
-
-Le rapport contient tous les documents nécessaires à la compréhension du
-déroulement du projet en annexes. Cahier des charges, planifications, journal
-de travail, résumé du rapport TPI, etc. doivent être annexés au document.
+intéressé·e·s deux fois par semaine, au format [PDF]. Dans le cas d'un mini-TPI,
+le journal de travail est envoyé chaque jour.
 
 
 ### Application et code
@@ -349,7 +357,8 @@ Le·la candidat·e communique l’adresse de son dépôt Git aux intéressé·e�
 maintient à jour quotidiennement (plusieurs *commits* par jour). Le dépôt est
 agrémenté d’un fichier `README.md` au format [MarkDown], qui explique
 l’utilisation du projet et sa mise en œuvre. (Voir aussi l’objectif «simplicité
-des instructions de mise en œuvre», ci-dessous).
+des instructions de mise en œuvre», ci-dessous). Le lien vers le dépôt est 
+présent dans la documentation.
 
 
 ## Points techniques évalués spécifiques au projet
