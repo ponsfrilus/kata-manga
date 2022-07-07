@@ -36,7 +36,7 @@
 Le Kata Manga est un exercice de programmation destiné aux apprenti·e·s
 [informaticien·ne·s CFC en voie développement d’applications]. Il est fait
 pour se dérouler sous forme de [Travail pratique individuel (TPI)],
-dont le cadre est fixé par l’aricle 20 de l’[Ordonnance du SEFRI sur
+dont le cadre est fixé par l’article 20 de l’[Ordonnance du SEFRI sur
 la formation professionnelle initiale] et l’évaluation faite selon les
 [critères d’évaluation ICT], détaillés dans le [document fourni par
 iCQ-VD](http://www.tpivd.ch/files/cfc-ordo2k14/2.%20Criteres%20d%20evaluation%20TPI.PDF).
@@ -63,7 +63,7 @@ populaires du site [My Anime List](https://myanimelist.net/topmanga.php).
 
 ## Informations générales
 
-Le Kata Manga est prévu pour être réalisé en **80 heures**. Néamoins, si la 
+Le Kata Manga est prévu pour être réalisé en **80 heures**. Néanmoins, si la 
 personne le réalisant est à l’aise avec Docker, les API et le développement 
 font-end, il est possible de réduire la durée pour réaliser un "mini TPI".
 
@@ -154,8 +154,8 @@ Page principale du site présentant une liste des mangas, décrite dans la Figur
   - Une recherche est possible soit simultanément sur tous les champs de la 
     table, soit séparément sur les champs `title`, `author`, `genre` 
     ou `magazine` ;
-  - Le nombre de résultats présentés dans la table peut être modifié (`10`,
-    `15`, `20` ou `25`) ;
+  - Le nombre de résultats présentés dans la table peut être modifié (par 
+    exemple `10`, `25`, `50` ou `100` résultats affichés) ;
   - Une pagination est présente, permettant aux visiteurs d’afficher les 
     résultats suivant ou précédant ceux actuellement affichés.
 
@@ -390,7 +390,8 @@ En plus de cela, le travail sera évalué sur les 7 points spécifiques suivants
      le resultat de leurs requêtes.
 
   1. Le front-end est soigné, la liste des mangas paginée, triable et la
-     possibilité de faire une recherche dans la table est présente.
+     possibilité de faire une recherche dans la table est présente. Les 
+     différents points décrit dans le §[Mangas](#mangas) sont implémentés.
 
   1. Le rapport démontre que le·la candidat·e a étudié le modèle des données : 
      un diagramme entité-association ([ERD]) est présent dans le rapport. Le·la
